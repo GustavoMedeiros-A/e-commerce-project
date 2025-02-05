@@ -1,0 +1,38 @@
+GET http://localhost:8081/category/49c46391-b046-4ebe-b212-15f769ac69af
+
+####
+GET http://localhost:8081/categories
+
+###
+POST http://localhost:8081/category
+Content-Type: application/json
+
+{
+    "name": "Category 2"
+}
+
+###
+GET http://localhost:8081/product
+
+
+###
+POST http://localhost:8081/product
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "description": "Description 1",
+    "price": 10.0,
+    "category_id": "49c46391-b046-4ebe-b212-15f769ac69af",
+    "image_url": "http://localhost:9000/products/1.png"
+}
+
+
+###
+GET http://localhost:8081/product/46c80258-5896-40ad-ac77-dc2c391f229e
+
+###
+GET http://localhost:8081/products/category/49c46391-b046-4ebe-b212-15f769ac69af
+
+###
+GET http://localhost:8081/products
