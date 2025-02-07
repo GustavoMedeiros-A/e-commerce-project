@@ -3,6 +3,10 @@ import { ProductsModule } from './products/products.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './products/entities/product.entity';
 import { OrdersModule } from './orders/orders.module';
+import { Order } from './orders/entities/order.entity';
+import { OrderItem } from './orders/entities/order-item.entity';
+import { AuthModule } from './auth/auth.module';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -12,11 +16,13 @@ import { OrdersModule } from './orders/orders.module';
       username: 'root',
       password: 'root',
       database: 'orders',
-      entities: [Product],
+      entities: [Product, Order, OrderItem],
       synchronize: true,
     }),
     ProductsModule,
-    OrdersModule
+    OrdersModule,
+    AuthModule,
+    RabbitmqModule
   ],
   controllers: [],
   providers: [],
