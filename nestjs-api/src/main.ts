@@ -7,6 +7,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   // Transformações com pipes nas requests
 
-  await app.listen(3001);
+  await app.listen(3002);
 }
 bootstrap();
+
+
